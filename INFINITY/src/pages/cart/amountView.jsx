@@ -108,7 +108,7 @@ export const AmountView = ({ cartItems }) => {
     setPrice(price);
     setDiscount(discount);
   };
-  const URL = "http://localhost:8000"
+  const URL = "https://infinity-ecommerce.onrender.com"
   const checkoutHandler = async (amount) => {
     if (!account) {
       alert("Please Sign In First");

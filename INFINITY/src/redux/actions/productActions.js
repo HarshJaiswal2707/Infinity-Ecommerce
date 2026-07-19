@@ -8,7 +8,7 @@ import {
     GET_PRODUCT_DETAILS_REQUEST
 } from '../constants/productConstant';
 
-const URL = 'http://localhost:8000';
+const URL = 'https://infinity-ecommerce.onrender.com';
 
 export const getProducts = () => async (dispatch) => {
     try {
