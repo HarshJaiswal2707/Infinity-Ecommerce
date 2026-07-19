@@ -89,7 +89,7 @@ export const CartItem = ({ item }) => {
     <Component>
       <LeftComponent>
         <Image
-          src={`http://localhost:8000${item.url}`}
+          src={`https://infinity-ecommerce.onrender.com${item.url}`}
           alt={item.title}
         />
 
