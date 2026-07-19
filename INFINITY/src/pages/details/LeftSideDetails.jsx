@@ -51,7 +51,7 @@ export const LeftSide = ({ product }) => {
                     borderRadius: 2,
                     boxShadow: 6
                 }}>
-                    <Image src={`https://infinity-ecommerce.onrender.com/${product.url}`} alt="product" zoom={zoom} onClick={() => setZoom(!zoom)} />
+                    <Image src={`https://infinity-ecommerce.onrender.com${product.url}`} alt="product" zoom={zoom} onClick={() => setZoom(!zoom)} />
 
                 </Box>
                 <span>

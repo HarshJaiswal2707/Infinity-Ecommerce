@@ -75,7 +75,7 @@ export const Slide = ({ products, category, tagline }) => {
                         <Card key={product.id} sx={{ cursor: "pointer" }} onClick={() => { navigate(`/product/${product.id}`) }}>
                             <Box>
                                 <Image
-                                    src={`https://infinity-ecommerce.onrender.com/${product.url}`}
+                                    src={`https://infinity-ecommerce.onrender.com${product.url}`}
                                     alt={product.title}
                                 />
 
