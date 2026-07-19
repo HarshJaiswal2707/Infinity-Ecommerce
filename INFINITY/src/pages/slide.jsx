@@ -28,7 +28,7 @@ const responsive = {
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1,
+        items: 2,
     },
 };
 
@@ -66,7 +66,7 @@ export const Slide = ({ products, category, tagline }) => {
                 dotListClass="custom-dot-list-style"
                 itemClass="px-2"
                 containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
+                // removeArrowOnDeviceType={["tablet", "mobile"]}
             >
                 {products
                     ?.filter((product) => product.section === category)
