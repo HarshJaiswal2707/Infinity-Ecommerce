@@ -197,7 +197,7 @@ export default function CustomizedMenus({
                     )}
                 </MenuItem>
 
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={() => navigate("/cart")}>
                     Cart
                 </MenuItem>
 
