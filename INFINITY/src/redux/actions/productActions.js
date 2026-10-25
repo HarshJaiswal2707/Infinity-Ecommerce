@@ -8,7 +8,7 @@ import {
     GET_PRODUCT_DETAILS_REQUEST
 } from '../constants/productConstant';
 
-const URL = 'https://infinity-ecommerce.onrender.com';
+const URL = import.meta.env.VITE_API_URL;
 
 export const getProducts = () => async (dispatch) => {
     try {

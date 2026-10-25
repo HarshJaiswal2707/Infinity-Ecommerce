@@ -108,7 +108,7 @@ export const AmountView = ({ cartItems }) => {
     setPrice(price);
     setDiscount(discount);
   };
-  const URL = "https://infinity-ecommerce.onrender.com"
+const URL = import.meta.env.VITE_API_URL;
   const checkoutHandler = async (amount) => {
     if (!account) {
       alert("Please Sign In First");

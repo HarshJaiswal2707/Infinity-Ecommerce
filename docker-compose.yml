@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./infinityServer
+    container_name: infinity-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./infinityServer/.env
+    restart: unless-stopped
+
+  frontend:
+    build: ./INFINITY
+    container_name: infinity-frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
