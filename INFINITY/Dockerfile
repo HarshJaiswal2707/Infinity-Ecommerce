@@ -12,6 +12,7 @@ RUN npm install
 # Copy application source code
 COPY . .
 
+ENV VITE_API_URL=/api
 # Create production build
 RUN npm run build
 

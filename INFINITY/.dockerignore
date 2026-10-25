@@ -4,5 +4,4 @@ dist
 .env
 .env.*
 !.env.development
-!.env.production
 npm-debug.log*
