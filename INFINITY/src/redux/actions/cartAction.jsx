@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as actionType from '../constants/cartConstant';
-const URL = 'https://infinity-ecommerce.onrender.com';
+const URL = import.meta.env.VITE_API_URL;
 export const AddToCart=(id,quantity)=>async(dispatch)=>{
     try{
         const {data}=await axios.get(`${URL}/product/${id}`);
