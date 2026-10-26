@@ -8,7 +8,6 @@ import { getProducts } from '../redux/actions/productActions';
 import { useDispatch, useSelector } from 'react-redux'
 
 export const Background = () => {
-
     const { products } = useSelector(state => state.getProducts)
     const dispatch = useDispatch();
     useEffect(() => {
