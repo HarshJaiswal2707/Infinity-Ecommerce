@@ -1,2 +1,4 @@
 **/node_modules
 **/.env
+INFINITY/.env.development
+INFINITY/.env.production
