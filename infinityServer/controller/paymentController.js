@@ -19,26 +19,34 @@ export const getKey = async (req, res) => {
     })
 }
 
+
 export const paymentVerification = (req, res) => {
-    const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body
+    const {
+        razorpay_payment_id,
+        razorpay_order_id,
+        razorpay_signature
+    } = req.body;
 
-    const body = razorpay_order_id + '|' + razorpay_payment_id;
+    const body = razorpay_order_id + "|" + razorpay_payment_id;
 
-    const expectedSignature = crypto.createHmac("sha256", process.env.RAZORPAY_API_SECRET).update(body.toString()).digest("hex");
+    const expectedSignature = crypto
+        .createHmac("sha256", process.env.RAZORPAY_API_SECRET)
+        .update(body.toString())
+        .digest("hex");
 
     const isAuthentic = expectedSignature === razorpay_signature;
 
-    if (isAuthentic) {
-        return res.redirect(
-            `https://infinity-ecommerce-9cey-three.vercel.app/paymentSuccess?reference=${razorpay_payment_id}`
-        );
-    } else {
-        res.status(404).json({
+    if (!isAuthentic) {
+        return res.status(400).json({
             success: false
-        })
+        });
     }
 
-    res.status(200).json({
-        success: true
-    })
+    const frontendUrl =
+        process.env.FRONTEND_URL ||
+        "https://infinity-ecommerce-9cey-three.vercel.app";
+
+    return res.redirect(
+        `${frontendUrl}/paymentSuccess?reference=${razorpay_payment_id}`
+    );
 };
